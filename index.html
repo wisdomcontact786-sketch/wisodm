@@ -1,155 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pro Freelancing Platform</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f4f6f8; color: #222; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelancing Platform</title>
 
-    /* HEADER */
-    header { position: relative; height: 80vh; overflow: hidden; }
-    .slide { position: absolute; inset: 0; background-size: cover; background-position: center; animation: slider 18s infinite; }
-    .slide::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.55); }
-    .slide1 { background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d'); }
-    .slide2 { background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f'); animation-delay: 6s; }
-    .slide3 { background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c'); animation-delay: 12s; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    @keyframes slider {
-      0% { opacity: 0; }
-      10% { opacity: 1; }
-      30% { opacity: 1; }
-      40% { opacity: 0; }
-      100% { opacity: 0; }
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 20px; }
-    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 15px; }
-    .hero p { font-size: 1.1rem; max-width: 650px; margin: auto; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6f8;
+  color: #111;
+  padding-top: 70px;
+}
 
-    section { padding: 80px 8%; }
-    .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: 2.2rem; }
-    .section-title p { color: #666; }
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  z-index: 1000;
+}
 
-    /* SLIDERS */
-    .slider-wrapper { position: relative; }
-    .h-slider { overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory; }
-    .h-track { display: flex; gap: 24px; }
-    .h-track > * { scroll-snap-align: start; }
+.nav-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 16px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .h-slider::-webkit-scrollbar { height: 8px; }
-    .h-slider::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 10px; }
+.logo {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
 
-    .slide-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0,0,0,.15);
-      cursor: pointer;
-      font-size: 1.2rem;
-      z-index: 5;
-    }
-    .slide-btn.left { left: -20px; }
-    .slide-btn.right { right: -20px; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
 
-    @media (max-width: 768px) {
-      .slide-btn { display: none; }
-    }
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: .95rem;
+}
 
-    /* CV CARDS */
-    .cv-card { min-width: 280px; max-width: 280px; background: #fff; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.1); overflow: hidden; transition: .3s; text-decoration: none; color: inherit; }
-    .cv-card:hover { transform: translateY(-8px); }
-    .cv-img { width: 100%; height: 180px; object-fit: cover; }
-    .cv-body { padding: 18px; }
-    .cv-body h3 { font-size: 1.1rem; margin-bottom: 6px; }
-    .cv-body p { font-size: .9rem; color: #555; }
-    .cv-tag { display: inline-block; margin-top: 10px; background: #eef2ff; color: #3b5bfd; padding: 6px 12px; border-radius: 20px; font-size: .75rem; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
 
-    /* SERVICE CARDS */
-    .service-card { min-width: 300px; background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 10px 25px rgba(0,0,0,.08); transition: .3s; }
-    .service-card:hover { transform: translateY(-6px); }
-    .service-icon { font-size: 2.2rem; margin-bottom: 14px; }
+/* ================= HEADER ================= */
+header {
+  background: #0f172a;
+  color: #fff;
+  padding: 80px 8%;
+}
 
-    footer { background: #0f172a; color: #cbd5e1; padding: 40px 8%; text-align: center; }
-  </style>
+header h1 {
+  font-size: 2.3rem;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 70px 5%;
+}
+
+.section h2 {
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+/* ================= SLIDER ================= */
+.slider-wrapper {
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* arrows ALWAYS visible (desktop + mobile) */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: .9;
+}
+
+.slide-btn.left { left: 0; }
+.slide-btn.right { right: 0; }
+
+/* ================= CV CARD ================= */
+.cv-card {
+  flex: 0 0 28%;
+  min-height: 360px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  transition: transform .3s ease, opacity .3s ease;
+  scroll-snap-align: center;
+}
+
+.cv-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cv-card h3 {
+  margin: 14px 0 6px;
+  font-size: 1rem;
+}
+
+.cv-card p {
+  font-size: .85rem;
+  color: #555;
+}
+
+.cv-card a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #2563eb;
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+/* CENTER CARD EFFECT */
+.cv-card.active {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.cv-card.inactive {
+  transform: scale(.92);
+  opacity: .7;
+}
+
+/* ================= SERVICES ================= */
+.service-card {
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <div class="slide slide1"></div>
-  <div class="slide slide2"></div>
-  <div class="slide slide3"></div>
-  <div class="hero">
-    <div>
-      <h1>Professional Freelancing Platform</h1>
-      <p>Discover elite CVs, premium services, and trusted freelancers — all in one modern platform.</p>
-    </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">Freelancing Platform</a>
   </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Hire Verified Professionals</h1>
 </header>
 
-<section>
-  <div class="section-title">
-    <h2>Top Freelancer CVs</h2>
-    <p>Click a profile to view the full CV</p>
-  </div>
+<!-- CV SECTION -->
+<section class="section">
+  <h2>Featured CVs</h2>
 
   <div class="slider-wrapper">
-    <button class="slide-btn left" onclick="slide(this,-1)">◀</button>
-    <button class="slide-btn right" onclick="slide(this,1)">▶</button>
-    <div class="h-slider">
-      <div class="h-track">
-        <a href="https://wisdomcontact786-sketch.github.io/wisodm/GCV.html" class="cv-card">
-          <img class="cv-img" src="https://i.ibb.co/Q32LnrNx/1000891921.jpg" alt="Designer">
-          <div class="cv-body"><h3>Dr Ghulam Abbas </h3><p>5+ years crafting clean interfaces.</p><span class="cv-tag">Design</span></div>
-        </a>
-        <a href="cvs/fullstack.html" class="cv-card">
-          <img class="cv-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="Developer">
-          <div class="cv-body"><h3>Full Stack Developer</h3><p>React, Node & Cloud apps.</p><span class="cv-tag">Development</span></div>
-        </a>
-        <a href="cvs/marketer.html" class="cv-card">
-          <img class="cv-img" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c" alt="Marketer">
-          <div class="cv-body"><h3>Digital Marketer</h3><p>SEO, Ads & Growth.</p><span class="cv-tag">Marketing</span></div>
-        </a>
+    <button class="slide-btn left" onclick="slide(-1)">‹</button>
+
+    <div class="slider" id="cvSlider">
+      <div class="cv-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+        <h3>Dr Ghulam Abbas</h3>
+        <p>PhD – Quran & Education</p>
+        <a href="#">View CV</a>
+      </div>
+
+      <div class="cv-card">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+        <h3>UI Designer</h3>
+        <p>Web & Mobile UI</p>
+        <a href="#">View CV</a>
+      </div>
+
+      <div class="cv-card">
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12">
+        <h3>Developer</h3>
+        <p>Full Stack</p>
+        <a href="#">View CV</a>
       </div>
     </div>
+
+    <button class="slide-btn right" onclick="slide(1)">›</button>
   </div>
 </section>
 
-<section style="background:#fff">
-  <div class="section-title"><h2>Our Services</h2><p>Swipe to explore</p></div>
-  <div class="slider-wrapper">
-    <button class="slide-btn left" onclick="slide(this,-1)">◀</button>
-    <button class="slide-btn right" onclick="slide(this,1)">▶</button>
-    <div class="h-slider">
-      <div class="h-track">
-        <div class="service-card"><div class="service-icon">💼</div><h3>Freelancer Hiring</h3><p>Verified professionals.</p></div>
-        <div class="service-card"><div class="service-icon">📄</div><h3>CV Hosting</h3><p>Modern CV pages.</p></div>
-        <div class="service-card"><div class="service-icon">🚀</div><h3>Project Launch</h3><p>From idea to product.</p></div>
-        <div class="service-card"><div class="service-icon">🔐</div><h3>Secure Payments</h3><p>Safe transactions.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer><p>© 2026 Freelancing Platform | Built for GitHub Pages</p></footer>
+<footer>
+  © 2026 Freelancing Platform
+</footer>
 
 <script>
-  function slide(btn, direction) {
-    const slider = btn.parentElement.querySelector('.h-slider');
-    const card = slider.querySelector('.h-track > *');
-    if (!card) return;
-    const gap = 24;
-    const step = card.offsetWidth + gap;
-    slider.scrollBy({ left: step * direction, behavior: 'smooth' });
-  }
+const slider = document.getElementById('cvSlider');
+const cards = slider.children;
+let index = 1;
+
+/* initial state */
+updateCards();
+
+function slide(dir) {
+  index += dir;
+  index = Math.max(1, Math.min(index, cards.length - 2));
+
+  const cardWidth = cards[0].offsetWidth + 16;
+  slider.scrollTo({
+    left: cardWidth * (index - 1),
+    behavior: 'smooth'
+  });
+
+  updateCards();
+}
+
+function updateCards() {
+  [...cards].forEach((card, i) => {
+    card.classList.remove('active', 'inactive');
+    if (i === index) card.classList.add('active');
+    else card.classList.add('inactive');
+  });
+}
 </script>
+
 </body>
 </html>
