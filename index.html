@@ -14,29 +14,26 @@
   box-sizing: border-box;
 }
 
+/* ================= GLOBAL ================= */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f6f8;
   color: #111;
-  padding-top: 64px;
 }
 
 /* ================= NAVBAR ================= */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  height: 64px;
+  z-index: 1000;
   background: #0f172a;
   border-bottom: 1px solid #1e293b;
-  z-index: 1000;
 }
 
 .nav-container {
   max-width: 1400px;
   margin: auto;
-  height: 100%;
-  padding: 0 6%;
+  padding: 14px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,13 +43,13 @@ body {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 22px;
 }
 
 .nav-links a {
@@ -61,11 +58,6 @@ body {
   font-size: .95rem;
 }
 
-.nav-links a:hover {
-  color: #fff;
-}
-
-/* Mobile navbar: keep brand visible */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -96,7 +88,7 @@ header h1 {
 /* ================= SLIDER ================= */
 .slider-wrapper {
   position: relative;
-  overflow: hidden; /* IMPORTANT */
+  padding: 0 40px; /* SPACE FOR ARROWS */
 }
 
 .slider {
@@ -104,14 +96,14 @@ header h1 {
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 0 20px;
+  padding: 10px 0;
 }
 
 .slider::-webkit-scrollbar {
   display: none;
 }
 
-/* arrows */
+/* arrows – now OUTSIDE cards */
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -123,16 +115,21 @@ header h1 {
   height: 36px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 5;
+  z-index: 10;
 }
 
-.slide-btn.left { left: 6px; }
-.slide-btn.right { right: 6px; }
+.slide-btn.left {
+  left: 0;
+}
+
+.slide-btn.right {
+  right: 0;
+}
 
 /* ================= CV CARD ================= */
 .cv-card {
   min-width: 280px;
-  min-height: 410px; /* small increase */
+  min-height: 410px;
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -167,7 +164,7 @@ header h1 {
   font-weight: 500;
 }
 
-/* ================= SERVICES ================= */
+/* ================= SERVICE CARD ================= */
 .service-card {
   min-width: 260px;
   background: #fff;
@@ -176,6 +173,7 @@ header h1 {
   padding: 22px;
 }
 
+/* ================= FOOTER ================= */
 footer {
   background: #0f172a;
   color: #cbd5e1;
@@ -275,6 +273,7 @@ function slide(btn, dir) {
   const slider = btn.parentElement.querySelector('.slider');
   const card = slider.children[0];
   const gap = 20;
+
   slider.scrollBy({
     left: dir * (card.offsetWidth + gap),
     behavior: 'smooth'
