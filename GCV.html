@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f4f6f8; color: #222; }
+    body { font-family: 'Poppins', sans-serif; background: #f4f6f8; color: #222; padding-top: 70px; }
 
     /* HEADER */
     header {
@@ -96,13 +96,73 @@
       .profile-header { grid-template-columns: 1fr; text-align: center; }
       .profile-img { margin: auto; }
     }
-  </style>
+    
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0f172a;
+      z-index: 1000;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+</st
 </head>
 <body>
 
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">Freelancing Platform</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#cvs">CVs</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <header>
   <div class="profile-header">
-    <img src="https://i.ibb.co/Q32LnrNx/1000891921.jpg" alt="Profile" class="profile-img">
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Profile" class="profile-img">
     <div class="profile-info">
       <h1>Dr Ghulam Abbas</h1>
       <h3>Researcher & Islamic Studies Scholar</h3>
