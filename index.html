@@ -8,13 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ================= GLOBAL ================= */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f6f8;
@@ -58,10 +53,10 @@ body {
   font-size: .95rem;
 }
 
+.nav-links a:hover { color: #fff; }
+
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+  .nav-links { display: none; }
 }
 
 /* ================= HEADER ================= */
@@ -71,24 +66,16 @@ header {
   padding: 70px 6% 60px;
 }
 
-header h1 {
-  font-size: 2.2rem;
-}
+header h1 { font-size: 2.2rem; }
 
 /* ================= SECTIONS ================= */
-.section {
-  padding: 60px 6%;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
+.section { padding: 60px 6%; }
+.section h2 { margin-bottom: 20px; font-size: 1.5rem; }
 
 /* ================= SLIDER ================= */
 .slider-wrapper {
   position: relative;
-  padding: 0 40px; /* SPACE FOR ARROWS */
+  padding: 0 40px;
 }
 
 .slider {
@@ -99,11 +86,8 @@ header h1 {
   padding: 10px 0;
 }
 
-.slider::-webkit-scrollbar {
-  display: none;
-}
+.slider::-webkit-scrollbar { display: none; }
 
-/* arrows – now OUTSIDE cards */
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -118,18 +102,13 @@ header h1 {
   z-index: 10;
 }
 
-.slide-btn.left {
-  left: 0;
-}
-
-.slide-btn.right {
-  right: 0;
-}
+.slide-btn.left { left: 0; }
+.slide-btn.right { right: 0; }
 
 /* ================= CV CARD ================= */
 .cv-card {
   min-width: 280px;
-  min-height: 410px;
+  min-height: 420px;
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -145,24 +124,9 @@ header h1 {
   border-radius: 8px;
 }
 
-.cv-card h3 {
-  margin: 14px 0 6px;
-  font-size: 1.05rem;
-}
-
-.cv-card p {
-  font-size: .9rem;
-  color: #555;
-  flex-grow: 1;
-}
-
-.cv-card a {
-  margin-top: 12px;
-  text-decoration: none;
-  color: #2563eb;
-  font-size: .9rem;
-  font-weight: 500;
-}
+.cv-card h3 { margin: 14px 0 6px; font-size: 1.05rem; }
+.cv-card p { font-size: .9rem; color: #555; flex-grow: 1; }
+.cv-card a { margin-top: 12px; text-decoration: none; color: #2563eb; font-weight: 500; }
 
 /* ================= SERVICE CARD ================= */
 .service-card {
@@ -173,42 +137,114 @@ header h1 {
   padding: 22px;
 }
 
+.see-more {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.see-more a {
+  text-decoration: none;
+  font-size: .95rem;
+  color: #2563eb;
+}
+
 /* ================= FOOTER ================= */
 footer {
   background: #0f172a;
   color: #cbd5e1;
+  padding: 50px 6% 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-grid h4 { margin-bottom: 12px; color: #fff; }
+.footer-grid a {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: .9rem;
+}
+
+.footer-grid input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.footer-grid button {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-bottom {
   text-align: center;
-  padding: 24px;
-  margin-top: 40px;
+  font-size: .85rem;
+  border-top: 1px solid #1e293b;
+  padding-top: 16px;
+}
+
+/* ================= COOKIES ================= */
+.cookie-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 10px;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  font-size: .85rem;
+  z-index: 2000;
+}
+
+.cookie-box button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
     <a href="#" class="logo">Freelancing Platform</a>
     <ul class="nav-links">
+      <li><a href="#">Home</a></li>
       <li><a href="#cvs">CVs</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HEADER -->
 <header>
   <h1>Hire Verified Professionals</h1>
 </header>
 
-<!-- CVs -->
 <section class="section" id="cvs">
   <h2>Featured CVs</h2>
-
   <div class="slider-wrapper">
     <button class="slide-btn left" onclick="slide(this,-1)">‹</button>
-
     <div class="slider">
       <div class="cv-card">
         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
@@ -216,14 +252,12 @@ footer {
         <p>PhD – Quran & Educational Sciences</p>
         <a href="#">View CV →</a>
       </div>
-
       <div class="cv-card">
         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
         <h3>UI Designer</h3>
         <p>Web & Mobile UI Specialist</p>
         <a href="#">View CV →</a>
       </div>
-
       <div class="cv-card">
         <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12">
         <h3>Developer</h3>
@@ -231,53 +265,61 @@ footer {
         <a href="#">View CV →</a>
       </div>
     </div>
-
     <button class="slide-btn right" onclick="slide(this,1)">›</button>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section" id="services">
   <h2>Services</h2>
-
   <div class="slider-wrapper">
     <button class="slide-btn left" onclick="slide(this,-1)">‹</button>
-
     <div class="slider">
-      <div class="service-card">
-        <h3>Web Development</h3>
-        <p>Modern, scalable websites</p>
-      </div>
-
-      <div class="service-card">
-        <h3>UI / UX Design</h3>
-        <p>User-focused interfaces</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Academic Research</h3>
-        <p>Research & scholarly writing</p>
-      </div>
+      <div class="service-card"><h3>Web Development</h3><p>Modern & scalable websites</p></div>
+      <div class="service-card"><h3>UI / UX Design</h3><p>User-centered interfaces</p></div>
+      <div class="service-card"><h3>Academic Research</h3><p>Research & scholarly writing</p></div>
     </div>
-
     <button class="slide-btn right" onclick="slide(this,1)">›</button>
   </div>
+  <div class="see-more"><a href="#">See more services →</a></div>
 </section>
 
 <footer>
-  © 2026 Freelancing Platform
+  <div class="footer-grid">
+    <div>
+      <h4>Platform</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Blog</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <input type="email" placeholder="Your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Freelancing Platform. All rights reserved.</div>
 </footer>
+
+<div class="cookie-box" id="cookieBox">
+  This website uses cookies to enhance user experience. By continuing, you agree to our terms & policies.
+  <button onclick="acceptCookies()">Accept</button>
+</div>
 
 <script>
 function slide(btn, dir) {
   const slider = btn.parentElement.querySelector('.slider');
   const card = slider.children[0];
-  const gap = 20;
+  slider.scrollBy({ left: dir * (card.offsetWidth + 20), behavior: 'smooth' });
+}
 
-  slider.scrollBy({
-    left: dir * (card.offsetWidth + gap),
-    behavior: 'smooth'
-  });
+function acceptCookies() {
+  document.getElementById('cookieBox').style.display = 'none';
 }
 </script>
 
