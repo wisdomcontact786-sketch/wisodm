@@ -8,7 +8,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:70px}
+body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:96px}
 
 /* ================= NAVBAR ================= */
 .navbar{
@@ -22,9 +22,27 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:
   transition:transform .3s ease
 }
 .navbar.hide{transform:translateY(-100%)}
-.nav-container{max-width:1400px;margin:auto;padding:14px 6%;display:flex;align-items:center;gap:30px}
-.logo{color:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;white-space:nowrap}
-.nav-links{list-style:none;display:flex;gap:22px;overflow-x:auto;white-space:nowrap}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  padding:12px 6% 8px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px
+}
+
+.logo{color:#fff;font-weight:700;text-decoration:none;font-size:1.15rem;white-space:nowrap}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  white-space:nowrap;
+  width:100%
+}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{color:#cbd5e1;text-decoration:none;font-size:.95rem;font-weight:500}
 .nav-links a:hover{color:#fff}
@@ -147,7 +165,7 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:
 
 <nav class="navbar">
   <div class="nav-container">
-    <a href="#" class="logo">Freelancing Platform</a><br>
+    <a href="#" class="logo">Freelancing Platform</a>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="#cvs">CVs</a></li>
