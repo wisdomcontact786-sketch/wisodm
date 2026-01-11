@@ -8,7 +8,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:96px}
+body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:80px}
 
 /* ================= NAVBAR ================= */
 .navbar{
@@ -17,9 +17,10 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:
   left:0;
   width:100%;
   z-index:1000;
-  background:#0f172a;
+  background:rgba(15,23,42,.95);
+  backdrop-filter:saturate(180%) blur(8px);
   border-bottom:1px solid #1e293b;
-  transition:transform .3s ease
+  transition:transform .3s ease, background .3s ease
 }
 .navbar.hide{transform:translateY(-100%)}
 
@@ -33,7 +34,14 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:
   gap:10px
 }
 
-.logo{color:#fff;font-weight:700;text-decoration:none;font-size:1.15rem;white-space:nowrap}
+.logo{
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  font-size:1.25rem;
+  letter-spacing:.4px;
+  white-space:nowrap
+}
 
 .nav-links{
   list-style:none;
@@ -44,7 +52,25 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:
   width:100%
 }
 .nav-links::-webkit-scrollbar{display:none}
-.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.95rem;font-weight:500}
+.nav-links a{
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:.95rem;
+  font-weight:500;
+  padding-bottom:6px;
+  position:relative
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#2563eb;
+  transition:width .25s ease
+}
+.nav-links a:hover::after{width:100%}
 .nav-links a:hover{color:#fff}
 
 /* ================= HEADER ================= */
