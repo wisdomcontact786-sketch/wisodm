@@ -4,387 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Freelancing Platform</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f4f6f8;
-  color: #111;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111}
 
 /* ================= NAVBAR ================= */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: auto;
-  padding: 14px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-}
-
-.nav-links a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: .95rem;
-}
-
-.nav-links a:hover { color: #fff; }
-
-@media (max-width: 768px) {
-  /* ===== NAVBAR MOBILE (HORIZONTAL) ===== */
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 6px;
-  }
-
-  .nav-links li { border: none; padding: 0; }
-
-  .nav-links::-webkit-scrollbar { display: none; }
-
-  /* ===== HEADER MOBILE ===== */
-  .main-header {
-    height: 60vh;
-    padding: 0;
-  }
-
-  .header-content {
-    padding: 0 6%;
-    text-align: center;
-  }
-
-  .header-content h1 { font-size: 1.6rem; }
-  .header-content p { font-size: .95rem; }
-
-  /* ===== SLIDER MOBILE ===== */
-  .header-slide { height: 60vh; }
-
-  /* ===== CARDS MOBILE ===== */
-  .cv-card { min-width: 85%; }
-  .service-card { min-width: 85%; }
-}
-
-  .nav-container {
-    padding: 14px 5%;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: #0f172a;
-    padding: 18px 5% 22px;
-    gap: 14px;
-  }
-
-  .nav-links li {
-    border-bottom: 1px solid #1e293b;
-    padding-bottom: 10px;
-  }
-
-  .nav-links li:last-child {
-    border-bottom: none;
-  }
-
-  .nav-links a {
-    font-size: 1.05rem;
-    color: #e5e7eb;
-  }
-
-  /* ================= HEADER ================= */
-  header {
-    padding: 50px 5% 40px;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 1.7rem;
-    line-height: 1.3;
-  }
-
-  /* ================= SECTIONS ================= */
-  .section {
-    padding: 45px 5%;
-  }
-
-  .section h2 {
-    font-size: 1.35rem;
-  }
-
-  /* ================= SLIDERS ================= */
-  .slider-wrapper {
-    padding: 0;
-  }
-
-  .slider {
-    gap: 16px;
-    padding: 10px 4px 20px;
-  }
-
-  .slide-btn {
-    width: 34px;
-    height: 34px;
-    background: rgba(15,23,42,0.9);
-  }
-
-  .slide-btn.left { left: -6px; }
-  .slide-btn.right { right: -6px; }
-
-  /* ================= CV CARDS ================= */
-  .cv-card {
-    min-width: 82%;
-    min-height: 410px;
-    border-radius: 16px;
-  }
-
-  .cv-card img {
-    height: 170px;
-  }
-
-  .cv-card h3 {
-    font-size: 1.1rem;
-  }
-
-  /* ================= SERVICE CARDS ================= */
-  .service-card {
-    min-width: 80%;
-    border-radius: 16px;
-  }
-
-  .service-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .service-link {
-    font-size: .95rem;
-  }
-}
-
-  .nav-links a { font-size: 1rem; }
-
-  /* SLIDERS MOBILE FIX */
-  .slider-wrapper { padding: 0 10px; }
-
-  .slide-btn {
-    width: 32px;
-    height: 32px;
-  }
-
-  .cv-card {
-    min-width: 260px;
-    min-height: 400px;
-  }
-
-  .service-card {
-    min-width: 240px;
-  }
-}
-}
+.navbar{position:sticky;top:0;z-index:1000;background:#0f172a;border-bottom:1px solid #1e293b}
+.nav-container{max-width:1400px;margin:auto;padding:14px 6%;display:flex;align-items:center;gap:30px}
+.logo{color:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;white-space:nowrap}
+.nav-links{list-style:none;display:flex;gap:22px;overflow-x:auto;white-space:nowrap}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.95rem;font-weight:500}
+.nav-links a:hover{color:#fff}
 
 /* ================= HEADER ================= */
-header {
-  background: #0f172a;
-  color: #fff;
-  padding: 70px 6% 60px;
+.main-header{position:relative;height:75vh;min-height:460px;overflow:hidden}
+.header-slider{position:absolute;inset:0}
+.header-track{display:flex;height:100%;width:300%;animation:heroSlide 20s infinite}
+.header-slide{flex:1;background-size:cover;background-position:center}
+
+@keyframes heroSlide{
+  0%,28%{transform:translateX(0)}
+  33%,61%{transform:translateX(-33.33%)}
+  66%,100%{transform:translateX(-66.66%)}
 }
 
-header h1 { font-size: 2.2rem; }
+.main-header::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(15,23,42,.9),rgba(15,23,42,.5))}
+
+.header-content{position:relative;z-index:2;max-width:1400px;margin:auto;padding:0 6%;height:100%;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.header-content h1{font-size:2.8rem;max-width:640px;line-height:1.2}
+.header-content p{margin-top:14px;max-width:560px;opacity:.95}
+.header-actions{margin-top:26px;display:flex;gap:16px}
+.primary-btn,.secondary-btn{padding:13px 26px;border-radius:30px;text-decoration:none;font-size:.95rem;font-weight:500}
+.primary-btn{background:#2563eb;color:#fff}
+.secondary-btn{border:1px solid #fff;color:#fff}
 
 /* ================= SECTIONS ================= */
-.section { padding: 60px 6%; }
-.section h2 { margin-bottom: 20px; font-size: 1.5rem; }
+.section{padding:80px 6%}
+.section h2{font-size:1.7rem;margin-bottom:24px}
 
-/* ================= SLIDER ================= */
-.slider-wrapper {
-  position: relative;
-  padding: 0 40px;
-}
+/* ================= SLIDERS ================= */
+.slider-wrapper{position:relative;padding:0 30px}
+.slider{display:flex;gap:22px;overflow-x:auto;scroll-behavior:smooth;padding:10px 4px 18px}
 
-.slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-}
+/* visible scroll indicator */
+.slider{scrollbar-width:thin;scrollbar-color:#94a3b8 transparent}
+.slider::-webkit-scrollbar{height:6px}
+.slider::-webkit-scrollbar-track{background:transparent}
+.slider::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:10px}
 
-.slider::-webkit-scrollbar { display: none; }
-
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #0f172a;
-  color: #fff;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.slide-btn.left { left: 0; }
-.slide-btn.right { right: 0; }
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0f172a;color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;z-index:5}
+.slide-btn.left{left:0}
+.slide-btn.right{right:0}
 
 /* ================= CV CARD ================= */
-.cv-card {
-  min-width: 280px;
-  min-height: 420px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.cv-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.cv-card h3 { margin: 14px 0 6px; font-size: 1.05rem; }
-.cv-card p { font-size: .9rem; color: #555; flex-grow: 1; }
-.cv-card a { margin-top: 12px; text-decoration: none; color: #2563eb; font-weight: 500; }
+.cv-card{min-width:320px;min-height:440px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;display:flex;flex-direction:column;transition:.25s}
+.cv-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(0,0,0,.1)}
+.cv-card img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+.cv-card h3{margin:16px 0 6px;font-size:1.1rem}
+.cv-card p{font-size:.9rem;color:#555;flex-grow:1}
+.cv-card a{margin-top:12px;color:#2563eb;text-decoration:none;font-weight:600}
 
 /* ================= SERVICE CARD ================= */
-.service-card {
-  min-width: 260px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+.service-card{min-width:280px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.service-card h3{margin-bottom:8px}
+.service-card p{font-size:.9rem;color:#555;flex-grow:1}
+.service-link{margin-top:14px;color:#2563eb;text-decoration:none;font-weight:600}
 
-.service-card h3 { margin-bottom: 8px; }
-.service-card p { font-size: .9rem; color: #555; flex-grow: 1; }
-
-.service-link {
-  margin-top: 14px;
-  font-size: .9rem;
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.service-link:hover { text-decoration: underline; }
-
-.see-more {
-  margin-top: 20px;
-  text-align: right;
-}
-
-.see-more a {
-  text-decoration: none;
-  font-size: .95rem;
-  color: #2563eb;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 50px 6% 30px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.footer-grid h4 { margin-bottom: 12px; color: #fff; }
-.footer-grid a {
-  display: block;
-  color: #cbd5e1;
-  text-decoration: none;
-  margin-bottom: 8px;
-  font-size: .9rem;
-}
-
-.footer-grid input {
-  padding: 10px;
-  width: 100%;
-  border-radius: 6px;
-  border: none;
-  margin-bottom: 10px;
-}
-
-.footer-grid button {
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 6px;
-  background: #2563eb;
-  color: #fff;
-  cursor: pointer;
-}
-
-.footer-bottom {
-  text-align: center;
-  font-size: .85rem;
-  border-top: 1px solid #1e293b;
-  padding-top: 16px;
-}
-
-/* ================= COOKIES ================= */
-.cookie-box {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  padding: 16px;
-  border-radius: 10px;
-  max-width: 320px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.1);
-  font-size: .85rem;
-  z-index: 2000;
-}
-
-.cookie-box button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .main-header{height:60vh}
+  .header-content h1{font-size:1.8rem}
+  .section{padding:60px 5%}
+  .cv-card{min-width:85%}
+  .service-card{min-width:85%}
+  .slide-btn{display:none}
 }
 </style>
 </head>
@@ -413,7 +110,7 @@ footer {
   </div>
   <div class="header-content">
     <h1>Hire Verified Professionals</h1>
-    <p>Discover expert CVs and professional services in one trusted platform.</p>
+    <p>Discover expert CVs and professional services in one trusted freelancing platform.</p>
     <div class="header-actions">
       <a href="#cvs" class="primary-btn">Browse CVs</a>
       <a href="#services" class="secondary-btn">View Services</a>
@@ -426,24 +123,9 @@ footer {
   <div class="slider-wrapper">
     <button class="slide-btn left" onclick="slide(this,-1)">‹</button>
     <div class="slider">
-      <div class="cv-card">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
-        <h3>Dr Ghulam Abbas</h3>
-        <p>PhD – Quran & Educational Sciences</p>
-        <a href="#">View CV →</a>
-      </div>
-      <div class="cv-card">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
-        <h3>UI Designer</h3>
-        <p>Web & Mobile UI Specialist</p>
-        <a href="#">View CV →</a>
-      </div>
-      <div class="cv-card">
-        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12">
-        <h3>Developer</h3>
-        <p>Full-Stack Web Developer</p>
-        <a href="#">View CV →</a>
-      </div>
+      <div class="cv-card"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"><h3>Dr Ghulam Abbas</h3><p>PhD – Quran & Educational Sciences</p><a href="#">View CV →</a></div>
+      <div class="cv-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"><h3>UI Designer</h3><p>Web & Mobile UI Specialist</p><a href="#">View CV →</a></div>
+      <div class="cv-card"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12"><h3>Full Stack Developer</h3><p>Modern web applications</p><a href="#">View CV →</a></div>
     </div>
     <button class="slide-btn right" onclick="slide(this,1)">›</button>
   </div>
@@ -454,52 +136,19 @@ footer {
   <div class="slider-wrapper">
     <button class="slide-btn left" onclick="slide(this,-1)">‹</button>
     <div class="slider">
-      <div class="service-card"><h3>Web Development</h3><p>Modern & scalable websites</p><a href="#" class="service-link">Read more →</a></div>
-      <div class="service-card"><h3>UI / UX Design</h3><p>User-centered interfaces</p><a href="#" class="service-link">Read more →</a></div>
-      <div class="service-card"><h3>Academic Research</h3><p>Research & scholarly writing</p><a href="#" class="service-link">Read more →</a></div>
+      <div class="service-card"><h3>Web Development</h3><p>Scalable, modern websites</p><a href="#" class="service-link">Read more →</a></div>
+      <div class="service-card"><h3>UI / UX Design</h3><p>User-focused digital design</p><a href="#" class="service-link">Read more →</a></div>
+      <div class="service-card"><h3>Academic Research</h3><p>Professional scholarly work</p><a href="#" class="service-link">Read more →</a></div>
     </div>
     <button class="slide-btn right" onclick="slide(this,1)">›</button>
   </div>
-  <div class="see-more"><a href="#">See more services →</a></div>
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h4>Platform</h4>
-      <a href="#">About Us</a>
-      <a href="#">Careers</a>
-      <a href="#">Blog</a>
-    </div>
-    <div>
-      <h4>Support</h4>
-      <a href="#">Help Center</a>
-      <a href="#">Terms & Conditions</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div>
-      <h4>Subscribe</h4>
-      <input type="email" placeholder="Your email">
-      <button>Subscribe</button>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Freelancing Platform. All rights reserved.</div>
-</footer>
-
-<div class="cookie-box" id="cookieBox">
-  This website uses cookies to enhance user experience. By continuing, you agree to our terms & policies.
-  <button onclick="acceptCookies()">Accept</button>
-</div>
-
 <script>
-function slide(btn, dir) {
-  const slider = btn.parentElement.querySelector('.slider');
-  const card = slider.children[0];
-  slider.scrollBy({ left: dir * (card.offsetWidth + 20), behavior: 'smooth' });
-}
-
-function acceptCookies() {
-  document.getElementById('cookieBox').style.display = 'none';
+function slide(btn,dir){
+  const slider=btn.parentElement.querySelector('.slider');
+  const card=slider.children[0];
+  slider.scrollBy({left:dir*(card.offsetWidth+22),behavior:'smooth'});
 }
 </script>
 
