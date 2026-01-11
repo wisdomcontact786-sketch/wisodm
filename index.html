@@ -56,10 +56,41 @@ body {
 .nav-links a:hover { color: #fff; }
 
 @media (max-width: 768px) {
-  /* ================= MOBILE NAVBAR ================= */
-  .navbar {
-    position: sticky;
+  /* ===== NAVBAR MOBILE (HORIZONTAL) ===== */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 6px;
   }
+
+  .nav-links li { border: none; padding: 0; }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  /* ===== HEADER MOBILE ===== */
+  .main-header {
+    height: 60vh;
+    padding: 0;
+  }
+
+  .header-content {
+    padding: 0 6%;
+    text-align: center;
+  }
+
+  .header-content h1 { font-size: 1.6rem; }
+  .header-content p { font-size: .95rem; }
+
+  /* ===== SLIDER MOBILE ===== */
+  .header-slide { height: 60vh; }
+
+  /* ===== CARDS MOBILE ===== */
+  .cv-card { min-width: 85%; }
+  .service-card { min-width: 85%; }
+}
 
   .nav-container {
     padding: 14px 5%;
@@ -372,20 +403,19 @@ footer {
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978');"></div>
+<header class="main-header">
+  <div class="header-slider">
+    <div class="header-track">
+      <div class="header-slide" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
+      <div class="header-slide" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');"></div>
+      <div class="header-slide" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978');"></div>
+    </div>
   </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
+  <div class="header-content">
     <h1>Hire Verified Professionals</h1>
-    <p>Explore trusted CVs, professional services, and connect with top talent worldwide.</p>
-    <div class="hero-actions">
-      <a href="#cvs" class="primary-btn">Explore CVs</a>
+    <p>Discover expert CVs and professional services in one trusted platform.</p>
+    <div class="header-actions">
+      <a href="#cvs" class="primary-btn">Browse CVs</a>
       <a href="#services" class="secondary-btn">View Services</a>
     </div>
   </div>
