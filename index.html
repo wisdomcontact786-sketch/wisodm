@@ -8,10 +8,20 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111}
+body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111;padding-top:70px}
 
 /* ================= NAVBAR ================= */
-.navbar{position:sticky;top:0;z-index:1000;background:#0f172a;border-bottom:1px solid #1e293b}
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:#0f172a;
+  border-bottom:1px solid #1e293b;
+  transition:transform .3s ease
+}
+.navbar.hide{transform:translateY(-100%)}
 .nav-container{max-width:1400px;margin:auto;padding:14px 6%;display:flex;align-items:center;gap:30px}
 .logo{color:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;white-space:nowrap}
 .nav-links{list-style:none;display:flex;gap:22px;overflow-x:auto;white-space:nowrap}
@@ -227,6 +237,19 @@ body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#111}
 </div>
 
 <script>
+let lastScroll=0;
+const navbar=document.querySelector('.navbar');
+window.addEventListener('scroll',()=>{
+  const currentScroll=window.pageYOffset;
+  if(currentScroll>lastScroll && currentScroll>100){
+    navbar.classList.add('hide');
+  }else{
+    navbar.classList.remove('hide');
+  }
+  lastScroll=currentScroll;
+});
+
+
 function acceptCookies(){document.getElementById('cookieBanner').style.display='none';}
 
 function slide(btn,dir){
