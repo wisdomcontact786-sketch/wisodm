@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#111;
+}
+
+/* ===== CONTAINER ===== */
+.contact-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 6%;
+}
+
+/* ===== CARD ===== */
+.contact-card{
+  width:100%;
+  max-width:560px;
+  background:#fff;
+  padding:38px;
+  border-radius:16px;
+  border:1px solid #e5e7eb;
+}
+
+/* ===== HEADER ===== */
+.contact-card h1{
+  font-size:1.9rem;
+  margin-bottom:8px;
+}
+.contact-card p{
+  font-size:.95rem;
+  color:#555;
+  margin-bottom:28px;
+}
+
+/* ===== FORM ===== */
+.contact-form{
+  display:grid;
+  gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  font-size:.95rem;
+  font-family:'Poppins',sans-serif;
+}
+
+.contact-form textarea{
+  resize:none;
+  min-height:130px;
+}
+
+/* ===== BUTTON ===== */
+.contact-form button{
+  background:#3b5bfd;
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:10px;
+  font-size:.95rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.contact-form button:hover{
+  background:#2f49d8;
+  transform:translateY(-1px);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .contact-card{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<section class="contact-section">
+  <div class="contact-card">
+    <h1>Contact Us</h1>
+    <p>Send your message directly to our email.</p>
+
+     <form action="https://formsubmit.co/wisdomcontact786@gmail.com" method="POST">
+
+      <!-- Required FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New Contact Message">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="thankyou.html">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
